@@ -1,3 +1,4 @@
+import { steamKey } from './public/javascripts/api_util';
 const express = require('express');
 const app = express();
 // const http = require('http').Server(app)
@@ -14,7 +15,7 @@ app.get('/', (req, res) => {
 app.get('/:gameId/playercount', (req, res) => {
   let results;
   let gameId = req.params.gameId;
-  fetch(`https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?key=C9A1ACD755E18DFEF0564BA3F68927DB&appid=${gameId}`)
+  fetch(`https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?key=${steamKey}&appid=${gameId}`)
     .then(function(response) {
         return response.text();
     }).then(function(body) {
