@@ -1,4 +1,4 @@
-import { steamKey } from './public/javascripts/api_util';
+const steamKey = require('./public/javascripts/key.js');
 const express = require('express');
 const app = express();
 // const http = require('http').Server(app)
