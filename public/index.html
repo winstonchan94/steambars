@@ -4,11 +4,32 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <script type="text/javascript" src="d3.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script type="text/javascript" src="./bundle.js"></script>
   </head>
   <body>
-    <canvas class="steam-bars" id="steam-bars" width="500" height="500"></canvas>
-    <canvas id="twitch-balls"><canvas>
+    <h1 class="header">SteamBars</h1>
+    <canvas class="steam-bars" id="steam-bars"></canvas>
+    <div id="twitch-balls">
+      <svg class="twitch-balls">
+      </svg>
+    <div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.6.0/d3.min.js"></script>
+      <script src="javascripts/twitch.js"></script>
+      <script>
+        d3.json("https://api.twitch.tv/kraken/games/top?limit=25")
+        .header("Client-ID", "c4xf7iasrivwhmuwvq57rz1l2o3181")
+        .get(function(error, data) {
+          if (error) {
+            console.error('Error getting or parsing the data.');
+            throw error;
+          }
+          // selection.datum() returns the bound datum for the first element in the selection and
+          //  doesn't join the specified array of data with the selected elements
+          var chart = bubbleChart().width(1000).height(667);
+          d3.select('#twitch-balls').datum(data).call(chart);
+        });
+      </script>
   </body>
 </html>

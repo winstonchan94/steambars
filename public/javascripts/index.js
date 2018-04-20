@@ -2,6 +2,7 @@ import { fetchPlayerCount, fetchTopTwitchGames } from './api_util';
 import { steamGames, createHash } from './bars';
 import Chart from 'chart.js';
 
+
 const strategy = ['Dota 2', "Sid Meier's Civilization V", "Sid Meier's Civilization VI", "Hearts of Iron IV"];
 const shooter = ["PLAYERUNKNOWN'S BATTLEGROUNDS", "Counter-Strike: Global Offensive", "Tom Clancy's Rainbow Six Siege", "Warframe", "Team Fortress 2", "Far Cry 5",
 "Counter-Strike", "War Thunder", "Arma 3", "PAYDAY 2"];
@@ -49,68 +50,67 @@ document.addEventListener('DOMContentLoaded', async function(){
     stratGames[game] = sortedSteamHash[game];
   });
 
-  debugger;
 
   var myChart = new Chart(barGraph, {
     type: 'horizontalBar',
     data: {
         labels: allGames,
         datasets: [{
-            label: 'Top 25 Games',
+            label: 'Player Count',
             data: allPlayers,
             backgroundColor: [
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(54, 162, 235, 0.5)',
-                'rgba(255, 206, 86, 0.5)',
-                'rgba(75, 192, 192, 0.5)',
-                'rgba(153, 102, 255, 0.5)',
-                'rgba(255, 159, 64, 0.5)',
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(54, 162, 235, 0.5)',
-                'rgba(255, 206, 86, 0.5)',
-                'rgba(75, 192, 192, 0.5)',
-                'rgba(153, 102, 255, 0.5)',
-                'rgba(255, 159, 64, 0.5)',
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(54, 162, 235, 0.5)',
-                'rgba(255, 206, 86, 0.5)',
-                'rgba(75, 192, 192, 0.5)',
-                'rgba(153, 102, 255, 0.5)',
-                'rgba(255, 159, 64, 0.5)',
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(54, 162, 235, 0.5)',
-                'rgba(255, 206, 86, 0.5)',
-                'rgba(75, 192, 192, 0.5)',
-                'rgba(153, 102, 255, 0.5)',
-                'rgba(255, 159, 64, 0.5)',
-                'rgba(255, 99, 132, 0.5)'
+                'rgba(76, 165, 44, .8)',
+                'rgba(76, 165, 44, .8)',
+                'rgba(76, 165, 44, .8)',
+                'rgba(76, 165, 44, .8)',
+                'rgba(76, 165, 44, .8)',
+                'rgba(76, 165, 44, .8)',
+                'rgba(76, 165, 44, .8)',
+                'rgba(76, 165, 44, .8)',
+                'rgba(76, 165, 44, .8)',
+                'rgba(76, 165, 44, .8)',
+                'rgba(76, 165, 44, .8)',
+                'rgba(76, 165, 44, .8)',
+                'rgba(76, 165, 44, .8)',
+                'rgba(76, 165, 44, .8)',
+                'rgba(76, 165, 44, .8)',
+                'rgba(76, 165, 44, .8)',
+                'rgba(76, 165, 44, .8)',
+                'rgba(76, 165, 44, .8)',
+                'rgba(76, 165, 44, .8)',
+                'rgba(76, 165, 44, .8)',
+                'rgba(76, 165, 44, .8)',
+                'rgba(76, 165, 44, .8)',
+                'rgba(76, 165, 44, .8)',
+                'rgba(76, 165, 44, .8)',
+                'rgba(76, 165, 44, .8)',
             ],
             borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)',
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)',
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)',
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)',
-                'rgba(255, 99, 132, 1)'
+                'rgba(76, 165, 44, 1)',
+                'rgba(76, 165, 44, 1)',
+                'rgba(76, 165, 44, 1)',
+                'rgba(76, 165, 44, 1)',
+                'rgba(76, 165, 44, 1)',
+                'rgba(76, 165, 44, 1)',
+                'rgba(76, 165, 44, 1)',
+                'rgba(76, 165, 44, 1)',
+                'rgba(76, 165, 44, 1)',
+                'rgba(76, 165, 44, 1)',
+                'rgba(76, 165, 44, 1)',
+                'rgba(76, 165, 44, 1)',
+                'rgba(76, 165, 44, 1)',
+                'rgba(76, 165, 44, 1)',
+                'rgba(76, 165, 44, 1)',
+                'rgba(76, 165, 44, 1)',
+                'rgba(76, 165, 44, 1)',
+                'rgba(76, 165, 44, 1)',
+                'rgba(76, 165, 44, 1)',
+                'rgba(76, 165, 44, 1)',
+                'rgba(76, 165, 44, 1)',
+                'rgba(76, 165, 44, 1)',
+                'rgba(76, 165, 44, 1)',
+                'rgba(76, 165, 44, 1)',
+                'rgba(76, 165, 44, 1)',
             ],
             borderWidth: 1
         },
@@ -119,15 +119,43 @@ document.addEventListener('DOMContentLoaded', async function(){
     },
     options: {
       responsive: false,
-      maintainAspectRatio: true, 
+      maintainAspectRatio: true,
+      legend: {
+        labels: {
+          fontColor: 'white'
+        }
+      },
+      title: {
+        display: true,
+        fontColor: 'white',
+        text: 'Top 25 Currently Played Steam Games'
+      },
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero:true
+                    beginAtZero:true,
+                    fontColor: 'white'
+                }
+            }],
+            xAxes: [{
+                ticks: {
+                    fontColor: 'white'
                 }
             }]
         }
     }
   });
 
+
+
+
 });
+
+
+
+
+
+
+
+
+//hello

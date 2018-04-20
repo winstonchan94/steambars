@@ -1,4 +1,21 @@
+.header {
+  color: white;
+  width: 100vw;
+  text-align: center;
+}
+body {
+  background: black;
+}
 .steam-bars {
-  width: 800px;
-  height: 800px;
+  margin: auto;
+  width: 1000px;
+  height: 1000px;
+  background: #1A1A1A;
+  color: white;
+}
+#twitch-balls {
+  width: 100vw;
+}
+.twitch-balls {
+  align-self: center;
 }
