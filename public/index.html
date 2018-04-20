@@ -12,7 +12,6 @@
     <h1 class="header">SteamBars</h1>
     <div class="charts">
       <canvas class="steam-bars" id="steam-bars"></canvas>
-      <h2 class="twitch-balls-header">TwitchBalls</h2>
       <h5 class="twitch-balls-description">Top 25 Currently Viewed Games on Twitch</h5>
       <div id="twitch-balls">
         <svg class="twitch-balls">
@@ -29,7 +28,7 @@
             console.error('Error getting or parsing the data.');
             throw error;
           }
-          var chart = bubbleChart().width(700).height(400);
+          var chart = bubbleChart().width(700).height(320);
           d3.select('#twitch-balls').datum(data).call(chart);
         });
       </script>

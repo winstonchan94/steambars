@@ -29,7 +29,7 @@ function bubbleChart() {
 
 
         let simulation = d3.forceSimulation(data)
-            .force("charge", d3.forceManyBody().strength([-150]))
+            .force("charge", d3.forceManyBody().strength([-90]))
             .force("x", d3.forceX())
             .force("y", d3.forceY())
             .on("tick", ticked);

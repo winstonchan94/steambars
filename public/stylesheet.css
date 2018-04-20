@@ -5,7 +5,7 @@
   font-size: 24px;
 }
 body {
-  background: black;
+  background: #1a1a1a;
   font-family: 'Exo', sans-serif;
   font-weight: none;
 }
@@ -18,14 +18,14 @@ body {
 .steam-bars {
   margin: auto;
   width: 700px;
-  height: 800px;
-  background: #1A1A1A;
+  height: 250px;
+  background: #262626;
   color: white;
 }
 
 .twitch-balls {
   margin: auto;
-  background: #1A1A1A;
+  background: #262626;
 }
 
 .twitch-balls-description {
@@ -34,7 +34,7 @@ body {
   margin-bottom: 0;
   padding: 10px 0;
   text-align: center;
-  background: #1A1A1A;
+  background: #262626;
 }
 .twitch-balls-header {
   color: #4B387A;
