@@ -13,6 +13,7 @@
     <div class="charts">
       <canvas class="steam-bars" id="steam-bars"></canvas>
       <h2 class="twitch-balls-header">TwitchBalls</h2>
+      <h5 class="twitch-balls-description">Top 25 Currently Viewed Games on Twitch</h5>
       <div id="twitch-balls">
         <svg class="twitch-balls">
         </svg>
@@ -28,9 +29,7 @@
             console.error('Error getting or parsing the data.');
             throw error;
           }
-          // selection.datum() returns the bound datum for the first element in the selection and
-          //  doesn't join the specified array of data with the selected elements
-          var chart = bubbleChart().width(600).height(400);
+          var chart = bubbleChart().width(700).height(400);
           d3.select('#twitch-balls').datum(data).call(chart);
         });
       </script>

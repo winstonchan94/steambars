@@ -24,7 +24,7 @@ function bubbleChart() {
             .style("background-color", "#4B387A")
             .style("border-radius", "6px")
             .style("text-align", "center")
-            .style("width", "200px")
+            .style("width", "150px")
             .text("");
 
 
@@ -47,7 +47,7 @@ function bubbleChart() {
           return tooltip.style("visibility", "visible");
         }
         function hideToolTip(d) {
-          
+
         }
         function handleMouseOver(d) {
           let circle = d3.select(this);
@@ -65,6 +65,7 @@ function bubbleChart() {
             .attr("r", function(d) {
               return scaleRadius(d.viewers);
             });
+          return tooltip.style("visibility", "hidden");
         }
 
 

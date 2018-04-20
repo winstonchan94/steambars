@@ -1,5 +1,5 @@
 .header {
-  color: white;
+  color: #45882F;
   width: 100vw;
   text-align: center;
   font-size: 24px;
@@ -25,13 +25,19 @@ body {
 
 .twitch-balls {
   margin: auto;
+  background: #1A1A1A;
 }
 
-.twitch-balls-header {
+.twitch-balls-description {
   color: white;
-  margin-top: 30px;
+  width: 700px;
+  margin-bottom: 0;
+  padding: 10px 0;
+  text-align: center;
+  background: #1A1A1A;
 }
-
-circle:hover {
-  border: 5px solid #4B387A;
+.twitch-balls-header {
+  color: #4B387A;
+  margin-top: 30px;
+  margin-bottom: 0;
 }
