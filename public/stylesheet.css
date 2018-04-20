@@ -2,20 +2,36 @@
   color: white;
   width: 100vw;
   text-align: center;
+  font-size: 24px;
 }
 body {
   background: black;
+  font-family: 'Exo', sans-serif;
+  font-weight: none;
+}
+.charts {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .steam-bars {
   margin: auto;
-  width: 1000px;
-  height: 1000px;
+  width: 700px;
+  height: 800px;
   background: #1A1A1A;
   color: white;
 }
-#twitch-balls {
-  width: 100vw;
-}
+
 .twitch-balls {
-  align-self: center;
+  margin: auto;
+}
+
+.twitch-balls-header {
+  color: white;
+  margin-top: 30px;
+}
+
+circle:hover {
+  border: 5px solid #4B387A;
 }

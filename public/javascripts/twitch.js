@@ -21,11 +21,10 @@ function bubbleChart() {
             .style("visibility", "hidden")
             .style("color", "white")
             .style("padding", "8px")
-            .style("background-color", "#626D71")
+            .style("background-color", "#4B387A")
             .style("border-radius", "6px")
             .style("text-align", "center")
-            .style("font-family", "monospace")
-            .style("width", "400px")
+            .style("width", "200px")
             .text("");
 
 
@@ -43,6 +42,31 @@ function bubbleChart() {
                     return d.y;
                 });
         }
+        function showToolTip(d) {
+          tooltip.html(d.game.name + "<br>" + d.viewers + " viewers");
+          return tooltip.style("visibility", "visible");
+        }
+        function hideToolTip(d) {
+          
+        }
+        function handleMouseOver(d) {
+          let circle = d3.select(this);
+          circle.transition().duration(200)
+            .attr("r", function(d) {
+              return scaleRadius(d.viewers) + 20;
+            });
+          showToolTip(d);
+        }
+
+        function handleMouseOut(d) {
+          let circle = d3.select(this);
+          circle.transition()
+            .duration(200)
+            .attr("r", function(d) {
+              return scaleRadius(d.viewers);
+            });
+        }
+
 
         let colorCircles = d3.scaleOrdinal(d3.schemeCategory10);
         let scaleRadius = d3.scaleLinear().domain([d3.min(attForRadius), d3.max(attForRadius)]).range([10, 40]);
@@ -57,16 +81,14 @@ function bubbleChart() {
                 return colorCircles(d.game.name);
             })
             .attr('transform', 'translate(' + [width / 2, height / 2] + ')')
-            .on("mouseover", function(d) {
-                tooltip.html(d.game.name + "<br>" + d.viewers + " viewers");
-                return tooltip.style("visibility", "visible");
-            })
+            .on("mouseover", handleMouseOver
+            )
             .on("mousemove", function() {
-                return tooltip.style("top", (d3.event.pageY - 10) + "px").style("left", (d3.event.pageX + 10) + "px");
+              return tooltip.style("top", (d3.event.pageY - 10) + "px").style("left", (d3.event.pageX + 10) + "px");
             })
-            .on("mouseout", function() {
-                return tooltip.style("visibility", "hidden");
-            });
+            .on("mouseout", handleMouseOut
+            );
+
     }
 
     chart.width = function(value) {
@@ -86,21 +108,29 @@ function bubbleChart() {
     };
 
 
-    chart.attForColors = function(value) {
-        if (!arguments.attForColors) {
-            return attForColors;
-        }
-        attForColors = value;
-        return chart;
-    };
 
-    chart.attForRadius = function(value) {
-        if (!arguments.attForRadius) {
-            return attForRadius;
-        }
-        attForRadius = value;
-        return chart;
-    };
 
     return chart;
 }
+
+
+
+
+
+
+
+//
+
+//function() {
+// return tooltip.style("visibility", "hidden");
+//}
+
+
+
+
+
+
+
+
+
+// oiwafjaowef

@@ -134,7 +134,8 @@ document.addEventListener('DOMContentLoaded', async function(){
             yAxes: [{
                 ticks: {
                     beginAtZero:true,
-                    fontColor: 'white'
+                    fontColor: 'white',
+                    fontSize: 9
                 }
             }],
             xAxes: [{
