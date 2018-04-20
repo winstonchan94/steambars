@@ -41,9 +41,4 @@ async function createHash() {
 };
 
 
-
-// forEach(gameName => {
-//   fetchPlayerCount(steamGames[gameName])
-//   .then(gameInfo => { results[gameName] = gameInfo.player_count;});
-// });
 export {createHash};
