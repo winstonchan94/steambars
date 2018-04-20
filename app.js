@@ -1,4 +1,5 @@
 const steamKey = require('./public/javascripts/key.js');
+
 const express = require('express');
 const app = express();
 // const http = require('http').Server(app)
@@ -27,6 +28,8 @@ app.get('/:gameId/playercount', (req, res) => {
     });
 
 });
+
+
 
 app.listen(PORT, () => {
   console.log(__dirname);
