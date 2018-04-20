@@ -1,4 +1,4 @@
-const steamKey = require('./public/javascripts/key.js');
+const steamKey = process.ENV.steamKey || require('./public/javascripts/key');
 
 const express = require('express');
 const app = express();
