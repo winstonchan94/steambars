@@ -34,4 +34,5 @@ app.get('/:gameId/playercount', (req, res) => {
 app.listen(PORT, () => {
   console.log(__dirname);
   console.log(`listening on ${PORT}`);
+
 });
