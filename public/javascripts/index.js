@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', async function(){
       maintainAspectRatio: true,
       legend: {
         labels: {
-          fontColor: 'white'
+          fontColor: 'white',
         }
       },
       title: {
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', async function(){
                 ticks: {
                     beginAtZero:true,
                     fontColor: 'white',
-                    fontSize: 9
+                    fontSize: 12
                 }
             }],
             xAxes: [{
