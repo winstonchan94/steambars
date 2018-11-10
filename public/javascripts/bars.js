@@ -27,7 +27,7 @@ export const steamGames = {
   "War Thunder": 236390,
   "The Witcher 3: Wild Hunt": 292030
 };
-
+// hi
 async function createHash() {
   let results = {};
   let keys = Object.keys(steamGames);
