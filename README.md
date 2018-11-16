@@ -109,3 +109,6 @@ SteamBars is a single page web application designed to graphically represent the
           return tooltip.style("visibility", "hidden");
         }
   ```
+## Future Plans
+ * Steam Bars will allow for tracking of player count fluctuations throughout 24 hour periods. For example, for PUBG on Steam it will show    a line graph denoting the change in concurrent players as time passes.
+ * Steam Bars will have separate graphs per genre of game.
