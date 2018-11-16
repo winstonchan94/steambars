@@ -53,4 +53,59 @@ SteamBars is a single page web application designed to graphically represent the
   });
   };
   ```
-  
+  * The information obtained from Steam API required additional logic to create a properly sorted array of game: player objects.
+  ```Javascript
+  async function createHash() {
+  let results = {};
+  let keys = Object.keys(steamGames);
+  for (var i = 0; i < keys.length; i++) {
+    results[keys[i]] = fetchPlayerCount(steamGames[keys[i]]);
+  }
+  for (var i = 0; i < keys.length; i++) {
+    results[keys[i]] = await results[keys[i]];
+  }
+  return results;
+  };
+  ```
+  * TwitchBalls has responsive effects made possible by d3 libraries
+  ```Javascript
+        let simulation = d3.forceSimulation(data)
+            .force("charge", d3.forceManyBody().strength([-90]))
+            .force("x", d3.forceX())
+            .force("y", d3.forceY())
+            .on("tick", ticked);
+
+        function ticked(e) {
+            node.attr("cx", function(d) {
+                    return d.x;
+                })
+                .attr("cy", function(d) {
+                    return d.y;
+                });
+        }
+        function showToolTip(d) {
+          tooltip.html(d.game.name + "<br>" + d.viewers + " viewers");
+          return tooltip.style("visibility", "visible");
+        }
+        function hideToolTip(d) {
+
+        }
+        function handleMouseOver(d) {
+          let circle = d3.select(this);
+          circle.transition().duration(200)
+            .attr("r", function(d) {
+              return scaleRadius(d.viewers) + 20;
+            });
+          showToolTip(d);
+        }
+
+        function handleMouseOut(d) {
+          let circle = d3.select(this);
+          circle.transition()
+            .duration(200)
+            .attr("r", function(d) {
+              return scaleRadius(d.viewers);
+            });
+          return tooltip.style("visibility", "hidden");
+        }
+  ```
